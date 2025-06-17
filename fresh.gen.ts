@@ -2,24 +2,32 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_platform_middleware from "./routes/(platform)/_middleware.ts";
+import * as $_platform_character_id_ from "./routes/(platform)/character/[id].tsx";
+import * as $_platform_characters from "./routes/(platform)/characters.tsx";
+import * as $_platform_fav_list from "./routes/(platform)/fav-list.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $Counter from "./islands/Counter.tsx";
+import * as $CharForm from "./islands/CharForm.tsx";
+import * as $Fav from "./islands/Fav.tsx";
+import * as $Logout from "./islands/Logout.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(platform)/_middleware.ts": $_platform_middleware,
+    "./routes/(platform)/character/[id].tsx": $_platform_character_id_,
+    "./routes/(platform)/characters.tsx": $_platform_characters,
+    "./routes/(platform)/fav-list.tsx": $_platform_fav_list,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
   },
   islands: {
-    "./islands/Counter.tsx": $Counter,
+    "./islands/CharForm.tsx": $CharForm,
+    "./islands/Fav.tsx": $Fav,
+    "./islands/Logout.tsx": $Logout,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
