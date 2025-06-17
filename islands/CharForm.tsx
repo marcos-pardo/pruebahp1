@@ -35,7 +35,7 @@ const CharForm: FunctionalComponent = () => {
 
   useEffect(() => {
     if (timeout.current) clearTimeout(timeout.current);
-    timeout.current = setTimeout(fetchCharacter, 1000);
+    timeout.current = setTimeout(fetchCharacter, 2000);
     return () => {
       if (timeout.current) clearTimeout(timeout.current);
     };
